@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapLayer;
@@ -33,7 +32,6 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
-import com.dongbat.game.util.AssetUtil;
 import com.dongbat.game.util.CameraUtil;
 import com.dongbat.game.util.PhysicsUtil;
 import com.dongbat.vocal.object.Mechanism;
@@ -51,9 +49,7 @@ public class Level {
 
   // TODO: ppt should be configurable
   public static final float PPT = 18f;
-  public static final float SMALLER_SIZE = 20;
 
-  private final Sprite background;
   private final TiledMap map;
   private final DelayedRemovalArray<Mechanism> mechanisms = new DelayedRemovalArray<Mechanism>();
   private final Batch batch;
@@ -112,8 +108,6 @@ public class Level {
   }
 
   public Level(String mapName, boolean tutorial) {
-    background = new Sprite(AssetUtil.getAssetManager().get("background.png", Texture.class));
-
     TmxMapLoader.Parameters p = new TmxMapLoader.Parameters();
     p.textureMinFilter = Texture.TextureFilter.Linear;
     p.textureMagFilter = Texture.TextureFilter.Linear;
@@ -126,8 +120,9 @@ public class Level {
 
     float mapPixelWidth = mapWidth * tilePixelWidth;
     float mapPixelHeight = mapHeight * tilePixelHeight;
+    float smallerSize = Math.min(mapPixelWidth, mapPixelHeight) / PPT;
 
-    camera = CameraUtil.createCamera(mapPixelWidth / mapPixelHeight, SMALLER_SIZE);
+    camera = CameraUtil.createCamera(mapPixelWidth / mapPixelHeight, smallerSize);
     viewport = CameraUtil.calculateViewport(mapPixelWidth / mapPixelHeight);
     batch = new SpriteBatch();
     box2DDebugRenderer = new Box2DDebugRenderer();

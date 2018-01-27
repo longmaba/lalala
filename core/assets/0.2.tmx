@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="40" height="15" tilewidth="24" tileheight="24" nextobjectid="110">
+ <tileset firstgid="1" name="bg" tilewidth="1920" tileheight="1080" tilecount="2" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="4">
+   <image width="1920" height="1080" source="0.2.jpg"/>
+  </tile>
+  <tile id="5">
+   <image width="1920" height="1080" source="0.2.winning.jpg"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="7" name="idle" tilewidth="500" tileheight="544" tilecount="4" columns="4">
+  <image source="idle.png" width="2000" height="544"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="200"/>
+    <frame tileid="1" duration="200"/>
+    <frame tileid="2" duration="200"/>
+    <frame tileid="3" duration="200"/>
+   </animation>
+  </tile>
+ </tileset>
+ <objectgroup name="bg"/>
+ <objectgroup name="objects"/>
+ <objectgroup name="walls">
+  <properties>
+   <property name="hidden" type="bool" value="true"/>
+  </properties>
+  <object id="89" x="-30" y="-6" width="24" height="384"/>
+  <object id="91" x="-36" y="324" width="1050" height="18">
+   <properties>
+    <property name="hidden" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="character">
+  <object id="99" gid="7" x="54" y="324" width="121.324" height="132"/>
+ </objectgroup>
+ <objectgroup name="mechanisms">
+  <object id="107" type="1" x="768" y="276" width="48" height="48"/>
+  <object id="108" type="99" x="414" y="258" width="66" height="66"/>
+  <object id="109" type="2" x="264" y="276" width="48" height="48">
+   <properties>
+    <property name="angle" type="float" value="-90"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

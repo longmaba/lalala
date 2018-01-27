@@ -20,7 +20,7 @@ import com.dongbat.vocal.object.Mechanism;
  */
 public class Goal extends Mechanism {
 
-  public int max = 4;
+  public int max = 1;
 
   private float stateTime;
   private Body hitbox;

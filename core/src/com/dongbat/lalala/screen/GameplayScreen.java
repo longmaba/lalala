@@ -21,7 +21,7 @@ public class GameplayScreen extends ScreenAdapter {
   private final Game game;
 
   public GameplayScreen(Game game) {
-    level = new Level("test1.tmx");
+    level = new Level("0.1.tmx");
     this.game = game;
   }
 

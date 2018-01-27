@@ -13,6 +13,7 @@ import com.dongbat.vocal.object.Mechanism;
 public class Wall extends Mechanism {
 
   public boolean decorated = false;
+  public boolean hidden = false;
   private float margin = 0;
   private final Array<Sprite> deco = new Array<Sprite>();
   private static Color color = Color.valueOf("1c1c1c");
@@ -42,6 +43,9 @@ public class Wall extends Mechanism {
 
   @Override
   public void draw(Batch batch) {
+    if (hidden) {
+      return;
+    }
     Texture white = AssetUtil.getWhite();
     ShapeUtil.drawRect(batch, x - width / 2, y - height / 2, width, height, color, white);
     if (decorated) {
