@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="16" height="7" tilewidth="50" tileheight="50" nextobjectid="25">
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="16" height="7" tilewidth="50" tileheight="50" nextobjectid="27">
  <tileset firstgid="1" name="bg" tilewidth="1920" tileheight="768" tilecount="3" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
@@ -71,6 +71,12 @@
  <objectgroup name="Object Layer 1">
   <object id="7" gid="29" x="50" y="362.5" width="83" height="90"/>
   <object id="9" gid="33" x="437.5" y="525" width="418" height="455"/>
+  <object id="25" gid="2" x="437.5" y="275" width="32" height="36">
+   <properties>
+    <property name="end" type="float" value="2"/>
+    <property name="start" type="float" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="camera">
   <object id="14" name="start" x="-50" y="250" width="362.5" height="100">
@@ -78,14 +84,9 @@
     <property name="t" type="float" value="1"/>
    </properties>
   </object>
-  <object id="22" name="start" x="437.5" y="162.5" width="362.5" height="187.5">
+  <object id="22" name="start" x="362.5" y="162.5" width="437.5" height="137.5">
    <properties>
     <property name="t" type="float" value="3"/>
-   </properties>
-  </object>
-  <object id="23" x="187.5" y="-50" width="525" height="125">
-   <properties>
-    <property name="t" type="float" value="5"/>
    </properties>
   </object>
  </objectgroup>
