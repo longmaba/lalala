@@ -4,14 +4,18 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.dongbat.game.pitch.PitchUpdater;
-import com.dongbat.lalala.screen.CutsceneScreen;
+import com.dongbat.game.util.AssetUtil;
+import com.dongbat.game.util.InputUtil;
+import com.dongbat.lalala.screen.ConfigScreen;
 
 public class MyGdxGame extends Game {
 
   @Override
   public void create() {
     PitchUpdater.init();
-    setScreen(new CutsceneScreen(this));
+    AssetUtil.load();
+    InputUtil.init();
+    setScreen(new ConfigScreen(this));
   }
 
   @Override
@@ -22,7 +26,12 @@ public class MyGdxGame extends Game {
   }
 
   @Override
-  public void dispose() {
+  public void resume() {
+    AssetUtil.load();
+  }
 
+  @Override
+  public void dispose() {
+    AssetUtil.dispose();
   }
 }

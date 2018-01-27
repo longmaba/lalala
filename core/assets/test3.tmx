@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="24" tileheight="24" nextobjectid="120">
+ <tileset firstgid="1" name="24x24" tilewidth="24" tileheight="24" spacing="1" margin="1" tilecount="144" columns="18">
+  <image source="24x24.png" width="455" height="205"/>
+  <tile id="0">
+   <properties>
+    <property name="animation" value="question"/>
+    <property name="interval" value="0.1"/>
+    <property name="ordered" value="1"/>
+   </properties>
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="animation" value="question"/>
+    <property name="interval" value="0.1"/>
+    <property name="ordered" value="2"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="animation" value="question"/>
+    <property name="interval" value="0.1"/>
+    <property name="ordered" value="3"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="animation" value="question"/>
+    <property name="interval" value="0.1"/>
+    <property name="ordered" value="4"/>
+   </properties>
+  </tile>
+  <tile id="81">
+   <animation>
+    <frame tileid="81" duration="100"/>
+    <frame tileid="82" duration="100"/>
+    <frame tileid="83" duration="100"/>
+    <frame tileid="84" duration="100"/>
+    <frame tileid="99" duration="100"/>
+    <frame tileid="100" duration="100"/>
+    <frame tileid="101" duration="100"/>
+    <frame tileid="102" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="115">
+   <animation>
+    <frame tileid="112" duration="100"/>
+    <frame tileid="113" duration="100"/>
+    <frame tileid="114" duration="100"/>
+    <frame tileid="115" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer name="background" width="20" height="15" visible="0">
+  <data encoding="base64">
+   YgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYgAAAGIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABiAAAAYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGIAAABiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABiAAAAYgAAAGIAAABiAAAAYgAAAAAAAAAAAAAAAAAAAHQAAAAAAAAAAAAAAAAAAAAAAAAAYgAAAGIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGIAAAABAAAAAQAAAAEAAABiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAABiAAAAYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYgAAAAEAAAABAAAAAQAAAGIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGIAAABiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABiAAAAAQAAAAEAAAABAAAAYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYgAAAGIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGIAAAABAAAAAQAAAAEAAABiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABiAAAAYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYgAAAGIAAABiAAAAYgAAAGIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGIAAABiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYgAAAGIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABiAAAAYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGIAAABiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAAYgAAAGIAAABiAAAA
+  </data>
+ </layer>
+ <objectgroup name="walls">
+  <properties>
+   <property name="decorated" type="bool" value="true"/>
+  </properties>
+  <object id="1" x="24" y="336" width="456" height="24"/>
+  <object id="3" x="0" y="0" width="24" height="360"/>
+  <object id="27" x="24" y="0" width="456" height="24"/>
+  <object id="29" x="456" y="24" width="24" height="312"/>
+  <object id="95" x="24" y="120" width="48" height="24">
+   <properties>
+    <property name="decorated" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="113" x="378" y="288" width="6" height="48"/>
+  <object id="114" x="48" y="144" width="48" height="24">
+   <properties>
+    <property name="decorated" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="115" x="72" y="168" width="48" height="24">
+   <properties>
+    <property name="decorated" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="116" x="96" y="192" width="48" height="24">
+   <properties>
+    <property name="decorated" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="117" x="120" y="216" width="48" height="24">
+   <properties>
+    <property name="decorated" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="118" x="144" y="240" width="48" height="24">
+   <properties>
+    <property name="decorated" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="119" x="168" y="264" width="48" height="24">
+   <properties>
+    <property name="decorated" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="mechanisms">
+  <object id="104" type="0" x="66" y="48" width="24" height="24">
+   <properties>
+    <property name="delay" type="int" value="0"/>
+    <property name="max" type="int" value="-1"/>
+    <property name="radius" type="float" value="0.5"/>
+    <property name="rate" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="105" type="2" x="48" y="120" width="24" height="24">
+   <properties>
+    <property name="angle" type="float" value="-90"/>
+    <property name="pitchLevel" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="106" type="2" x="72" y="144" width="24" height="24">
+   <properties>
+    <property name="angle" type="float" value="-90"/>
+    <property name="pitchLevel" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="107" type="2" x="96" y="168" width="24" height="24">
+   <properties>
+    <property name="angle" type="float" value="-90"/>
+    <property name="pitchLevel" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="108" type="2" x="120" y="192" width="24" height="24">
+   <properties>
+    <property name="angle" type="float" value="-90"/>
+    <property name="pitchLevel" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="109" type="2" x="144" y="216" width="24" height="24">
+   <properties>
+    <property name="angle" type="float" value="-90"/>
+    <property name="pitchLevel" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="110" type="2" x="168" y="240" width="24" height="24">
+   <properties>
+    <property name="angle" type="float" value="-90"/>
+    <property name="pitchLevel" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="111" type="2" x="192" y="264" width="24" height="24">
+   <properties>
+    <property name="angle" type="float" value="-90"/>
+    <property name="pitchLevel" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="112" type="1" x="384" y="312" width="24" height="24">
+   <properties>
+    <property name="max" type="float" value="100"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
