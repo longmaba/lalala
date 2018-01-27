@@ -29,16 +29,16 @@ public class DurationVacuum extends RotatingMechanism {
   private Sprite battery;
   private Sprite radius;
   private Sprite fan;
-  private static final float RADIUS = 4f;
+  private float effectRadius = 4f;
 
   @Override
   public void init() {
-    hitbox = PhysicsUtil.createSensor(level.getWorld(), x, y, RADIUS);
+    hitbox = PhysicsUtil.createSensor(level.getWorld(), x, y, effectRadius);
     battery = new Sprite(AssetUtil.getAssetManager().get("stuff.atlas", TextureAtlas.class).findRegion("battery"));
     battery.setSize(battery.getWidth() * 1f / battery.getHeight(), 1f);
     
     radius = new Sprite(AssetUtil.getAssetManager().get("stuff.atlas", TextureAtlas.class).findRegion("vacuum_radius"));
-    radius.setSize(RADIUS * 2, RADIUS * 2);
+    radius.setSize(effectRadius * 2, effectRadius * 2);
     
     fan = new Sprite(AssetUtil.getAssetManager().get("stuff.atlas", TextureAtlas.class).findRegion("vacuum"));
     fan.setSize(radius.getWidth(), radius.getHeight());
@@ -84,12 +84,12 @@ public class DurationVacuum extends RotatingMechanism {
 
   @Override
   public void draw(Batch batch) {
-    radius.setPosition(x - RADIUS, y - RADIUS);
+    radius.setPosition(x - effectRadius, y - effectRadius);
     radius.draw(batch);
     
     fan.rotate(fanSpeed);
     fan.setAlpha(MathUtils.clamp(accumulate / duration, 0, 1f));
-    fan.setPosition(x - RADIUS, y - RADIUS);
+    fan.setPosition(x - effectRadius, y - effectRadius);
     fan.draw(batch);
     
     battery.setPosition(x, y);
