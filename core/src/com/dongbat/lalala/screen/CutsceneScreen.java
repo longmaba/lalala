@@ -10,7 +10,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapLayer;
@@ -51,6 +50,11 @@ public class CutsceneScreen extends ScreenAdapter {
     if (Gdx.input.isKeyJustPressed(Keys.R)) {
       game.setScreen(new CutsceneScreen(game));
     }
+    if (Gdx.input.isKeyPressed(Keys.SPACE)) {
+      Gdx.gl.glViewport(0, height / 4, width, height / 2);
+      camera.setToOrtho(false, width, height / 2);
+      camera.position.set(width / 2, height / 2, 0);
+    }
     camera.update();
     batch.setProjectionMatrix(camera.combined);
     batch.begin();
@@ -64,12 +68,15 @@ public class CutsceneScreen extends ScreenAdapter {
           TiledMapTileMapObject tmo = (TiledMapTileMapObject) object;
           TiledMapTile tile = tmo.getTile();
           TextureRegion region = tile.getTextureRegion();
-          
+
           batch.draw(region, tmo.getX(), tmo.getY(), region.getRegionWidth() * tmo.getScaleX(), region.getRegionHeight() * tmo.getScaleY());
         }
       }
     }
     batch.end();
+
+    Gdx.gl.glViewport(0, 0, width, height);
+    camera.setToOrtho(false, width, height);
   }
 
   @Override
@@ -77,7 +84,5 @@ public class CutsceneScreen extends ScreenAdapter {
     map.dispose();
     batch.dispose();
   }
-  
-  
 
 }
