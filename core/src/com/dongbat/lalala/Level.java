@@ -14,6 +14,7 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
@@ -29,7 +30,6 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.dongbat.game.util.AssetUtil;
 import com.dongbat.game.util.CameraUtil;
-import com.dongbat.game.util.InputUtil;
 import com.dongbat.game.util.PhysicsUtil;
 import com.dongbat.vocal.object.Mechanism;
 import com.dongbat.vocal.object.mechanism.Goal;
@@ -56,6 +56,7 @@ public class Level {
   private final OrthographicCamera camera;
   private final OrthogonalTiledMapRenderer mapRenderer;
   private World world;
+  private final Rectangle viewport;
 
   public World getWorld() {
     return world;
@@ -100,7 +101,7 @@ public class Level {
   public Level(String mapName) {
     this(mapName, false);
   }
-  
+
   public Level(String mapName, ChangeListener changeListener) {
     this(mapName, false);
   }
@@ -112,7 +113,17 @@ public class Level {
     p.textureMinFilter = Texture.TextureFilter.Linear;
     p.textureMagFilter = Texture.TextureFilter.Linear;
     map = new TmxMapLoader().load(mapName, p);
-    camera = CameraUtil.createCamera(SMALLER_SIZE);
+    MapProperties prop = map.getProperties();
+    int mapWidth = prop.get("width", Integer.class);
+    int mapHeight = prop.get("height", Integer.class);
+    int tilePixelWidth = prop.get("tilewidth", Integer.class);
+    int tilePixelHeight = prop.get("tileheight", Integer.class);
+
+    float mapPixelWidth = mapWidth * tilePixelWidth;
+    float mapPixelHeight = mapHeight * tilePixelHeight;
+
+    camera = CameraUtil.createCamera(mapPixelWidth / mapPixelHeight, SMALLER_SIZE);
+    viewport = CameraUtil.calculateViewport(mapPixelWidth / mapPixelHeight);
     batch = new SpriteBatch();
     box2DDebugRenderer = new Box2DDebugRenderer();
     world = new World(new Vector2(0, GRAVITY), false);
@@ -156,6 +167,7 @@ public class Level {
     mechanisms.begin();
     // TODO: reduce to the calls to collide()
     for (Mechanism mechanism : mechanisms) {
+      // TODO: normal
       for (Body[] collision : collisions) {
         mechanism.collide(collision[0], collision[1]);
       }
@@ -262,7 +274,8 @@ public class Level {
   }
 
   public void draw() {
-    Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), (int) (Gdx.graphics.getHeight() * .94f));
+    Gdx.gl.glViewport(MathUtils.round(viewport.x), MathUtils.round(viewport.y),
+      MathUtils.round(viewport.width), MathUtils.round(viewport.height));
     camera.update();
     mapRenderer.setView(camera);
     mapRenderer.render();
@@ -273,10 +286,12 @@ public class Level {
     for (Mechanism mechanism : mechanisms) {
       mechanism.draw(batch);
     }
+    batch.end();
     if (debug) {
       box2DDebugRenderer.render(world, camera.combined);
     }
-    Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+    Gdx.gl.glViewport(0, 0,
+      Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
   }
 
   public void dispose() {

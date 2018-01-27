@@ -108,9 +108,11 @@ public class ConfigScreen extends ScreenAdapter {
       Arrays.sort(preferedPitches);
       VoiceConfig.setPreferedPitches(preferedPitches);
       System.out.println("ok");
+      game.setScreen(new GameplayScreen(game));
     } catch (Exception ex) {
       System.out.println(ex.getMessage());
     }
+    
   }
 
   private void start() {
