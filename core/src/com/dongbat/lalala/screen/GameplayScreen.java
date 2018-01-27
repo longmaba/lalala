@@ -6,6 +6,8 @@
 package com.dongbat.lalala.screen;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.ScreenAdapter;
 import com.dongbat.lalala.Level;
 
@@ -25,6 +27,9 @@ public class GameplayScreen extends ScreenAdapter {
 
   @Override
   public void render(float delta) {
+    if (Gdx.input.isKeyJustPressed(Keys.R)) {
+      game.setScreen(new GameplayScreen(game));
+    }
     level.update(delta);
     level.draw();
   }

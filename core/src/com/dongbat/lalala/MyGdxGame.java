@@ -7,7 +7,6 @@ import com.dongbat.game.pitch.PitchUpdater;
 import com.dongbat.game.util.AssetUtil;
 import com.dongbat.game.util.InputUtil;
 import com.dongbat.lalala.screen.ConfigScreen;
-import com.dongbat.lalala.screen.GameplayScreen;
 
 public class MyGdxGame extends Game {
 
@@ -16,7 +15,7 @@ public class MyGdxGame extends Game {
     PitchUpdater.init();
     AssetUtil.load();
     InputUtil.init();
-    setScreen(new GameplayScreen(this));
+    setScreen(new ConfigScreen(this));
   }
 
   @Override

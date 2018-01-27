@@ -6,14 +6,19 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.MapLayer;
+import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.maps.tiled.objects.TiledMapTileMapObject;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -273,6 +278,8 @@ public class Level {
     mechanisms.removeValue(mechanism, true);
   }
 
+  private final Rectangle drawingRec = new Rectangle();
+
   public void draw() {
     Gdx.gl.glViewport(MathUtils.round(viewport.x), MathUtils.round(viewport.y),
       MathUtils.round(viewport.width), MathUtils.round(viewport.height));
@@ -281,8 +288,28 @@ public class Level {
     mapRenderer.render();
     batch.begin();
     batch.setProjectionMatrix(camera.combined);
-    background.setSize(Gdx.graphics.getWidth() / PPT, Gdx.graphics.getHeight() / PPT);
-    background.draw(batch);
+    MapLayers layers = map.getLayers();
+    AnimatedTiledMapTile.updateAnimationBaseTime();
+
+    for (MapLayer layer : layers) {
+      MapObjects objects = layer.getObjects();
+      for (MapObject object : objects) {
+        if (object instanceof TiledMapTileMapObject) {
+          TiledMapTileMapObject tmo = (TiledMapTileMapObject) object;
+          TiledMapTile tile = tmo.getTile();
+          TextureRegion region = tile.getTextureRegion();
+
+          boolean winOnly = tmo.getProperties().get("winOnly", false, Boolean.class);
+          if (winOnly && !done) {
+            continue;
+          }
+          drawingRec.set(tmo.getX(), tmo.getY(), region.getRegionWidth() * tmo.getScaleX(), region.getRegionHeight() * tmo.getScaleY());
+          drawingRec.setX(drawingRec.x / PPT).setY(drawingRec.y / PPT)
+            .setWidth(drawingRec.width / PPT).setHeight(drawingRec.height / PPT);
+          batch.draw(region, drawingRec.x, drawingRec.y, drawingRec.width, drawingRec.height);
+        }
+      }
+    }
     for (Mechanism mechanism : mechanisms) {
       mechanism.draw(batch);
     }

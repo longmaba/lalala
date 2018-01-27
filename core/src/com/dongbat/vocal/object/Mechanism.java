@@ -7,6 +7,7 @@ import com.dongbat.lalala.Level;
 import com.dongbat.vocal.object.mechanism.Ball;
 import com.dongbat.vocal.object.mechanism.DurationVacuum;
 import com.dongbat.vocal.object.mechanism.Goal;
+import com.dongbat.vocal.object.mechanism.MovingPlatform;
 import com.dongbat.vocal.object.mechanism.PatternGate;
 import com.dongbat.vocal.object.mechanism.PitchAndDurationBomb;
 import com.dongbat.vocal.object.mechanism.PitchOnlyCannon;
@@ -42,6 +43,9 @@ public abstract class Mechanism {
         break;
       case 5:
         mechanism = new PatternGate();
+        break;
+      case 6:
+        mechanism = new MovingPlatform();
         break;
       case 99:
         mechanism = new Ball();
