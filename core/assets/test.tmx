@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="16" height="7" tilewidth="50" tileheight="50" nextobjectid="29">
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="32" height="14" tilewidth="50" tileheight="50" nextobjectid="34">
  <tileset firstgid="1" name="bg" tilewidth="1920" tileheight="768" tilecount="3" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
@@ -52,8 +52,8 @@
    </animation>
   </tile>
  </tileset>
- <tileset firstgid="33" name="run" tilewidth="836" tileheight="909" tilecount="6" columns="6">
-  <image source="run.png" width="5016" height="909"/>
+ <tileset firstgid="33" name="run" tilewidth="400" tileheight="434" tilecount="6" columns="6">
+  <image source="run.png" width="2400" height="434"/>
   <tile id="0">
    <animation>
     <frame tileid="0" duration="100"/>
@@ -66,21 +66,32 @@
   </tile>
  </tileset>
  <objectgroup name="Object Layer 2">
-  <object id="8" gid="3" x="0" y="362.5" width="812.5" height="492.5"/>
+  <object id="8" gid="3" x="300" y="562.5" width="812.5" height="492.5"/>
+  <object id="29" x="662.5" y="375" width="437.5" height="62.5"/>
  </objectgroup>
  <objectgroup name="Object Layer 1">
-  <object id="7" gid="29" x="50" y="362.5" width="83" height="90"/>
-  <object id="9" gid="33" x="450" y="525" width="418" height="455"/>
+  <object id="7" gid="29" x="350" y="562.5" width="83" height="90"/>
+  <object id="9" gid="33" x="825" y="562.5" width="143" height="155.658"/>
  </objectgroup>
  <objectgroup name="camera">
-  <object id="14" name="start" x="-50" y="250" width="362.5" height="100">
+  <object id="14" name="start" x="300" y="462.5" width="362.5" height="100">
    <properties>
     <property name="t" type="float" value="1"/>
    </properties>
   </object>
-  <object id="22" name="start" x="362.5" y="150" width="437.5" height="137.5">
+  <object id="22" name="start" x="812.5" y="425" width="134.615" height="50">
    <properties>
     <property name="t" type="float" value="3"/>
+   </properties>
+  </object>
+  <object id="32" x="812.5" y="444.231" width="134.615" height="19.2308">
+   <properties>
+    <property name="t" type="float" value="7"/>
+   </properties>
+  </object>
+  <object id="33" x="812.5" y="451.923" width="134.615">
+   <properties>
+    <property name="t" type="float" value="10"/>
    </properties>
   </object>
  </objectgroup>
