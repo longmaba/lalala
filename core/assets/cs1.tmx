@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="16" height="7" tilewidth="100" tileheight="100" nextobjectid="2">
+ <tileset firstgid="1" name="nier" tilewidth="340" tileheight="296" tilecount="25" columns="5">
+  <image source="nier.png" width="1700" height="1480"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="11" duration="100"/>
+    <frame tileid="12" duration="100"/>
+    <frame tileid="13" duration="100"/>
+    <frame tileid="14" duration="100"/>
+    <frame tileid="15" duration="100"/>
+    <frame tileid="16" duration="100"/>
+    <frame tileid="17" duration="100"/>
+    <frame tileid="18" duration="100"/>
+    <frame tileid="19" duration="100"/>
+    <frame tileid="20" duration="100"/>
+    <frame tileid="21" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <imagelayer name="bg" offsetx="-275" offsety="-100">
+  <image source="cs1-bg.jpg" width="1920" height="768"/>
+ </imagelayer>
+ <objectgroup name="Object Layer 1">
+  <object id="1" gid="1" x="775" y="525" width="340" height="296"/>
+ </objectgroup>
+</map>
