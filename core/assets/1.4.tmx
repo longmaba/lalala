@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="48" height="27" tilewidth="24" tileheight="24" nextobjectid="184">
+ <tileset firstgid="1" name="bg" tilewidth="1920" tileheight="1080" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="15">
+   <image width="1920" height="1080" source="1.4.jpg"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="17" name="idle" tilewidth="500" tileheight="544" tilecount="4" columns="4">
+  <image source="idle.png" width="2000" height="544"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="200"/>
+    <frame tileid="1" duration="200"/>
+    <frame tileid="2" duration="200"/>
+    <frame tileid="3" duration="200"/>
+   </animation>
+  </tile>
+ </tileset>
+ <objectgroup name="bg">
+  <object id="178" gid="16" x="0" y="648" width="1152" height="648"/>
+ </objectgroup>
+ <objectgroup name="objects">
+  <properties>
+   <property name="winOnly" type="bool" value="true"/>
+  </properties>
+ </objectgroup>
+ <objectgroup name="walls">
+  <properties>
+   <property name="hidden" type="bool" value="true"/>
+  </properties>
+  <object id="140" x="6" y="510" width="1134" height="18">
+   <properties>
+    <property name="hidden" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="142" x="408" y="414" width="396" height="36">
+   <properties>
+    <property name="hidden" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="154" x="6" y="276" width="12" height="246">
+   <properties>
+    <property name="hidden" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="character">
+  <object id="99" gid="17" x="54" y="492" width="121.324" height="132"/>
+ </objectgroup>
+ <objectgroup name="mechanisms">
+  <object id="179" type="1" x="750" y="252" width="41.5385" height="41.5385">
+   <properties>
+    <property name="max" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="180" type="2" x="330" y="275.538" width="41.5385" height="41.5385">
+   <properties>
+    <property name="angle" type="float" value="-45"/>
+    <property name="pitchLevel" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="181" type="3" x="371.538" y="234" width="41.5385" height="41.5385"/>
+  <object id="182" type="2" x="624" y="410.308" width="41.5385" height="41.5385">
+   <properties>
+    <property name="angle" type="float" value="30"/>
+    <property name="pitchLevel" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="183" type="99" x="603.231" y="368.769" width="41.5385" height="41.5385">
+   <properties>
+    <property name="radius" type="float" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

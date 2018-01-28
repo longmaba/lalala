@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="48" height="27" tilewidth="24" tileheight="24" nextobjectid="165">
+ <tileset firstgid="1" name="bg" tilewidth="1920" tileheight="1080" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="10">
+   <image width="1920" height="1080" source="back041.jpg"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="12" name="idle" tilewidth="500" tileheight="544" tilecount="4" columns="4">
+  <image source="idle.png" width="2000" height="544"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="200"/>
+    <frame tileid="1" duration="200"/>
+    <frame tileid="2" duration="200"/>
+    <frame tileid="3" duration="200"/>
+   </animation>
+  </tile>
+ </tileset>
+ <objectgroup name="bg"/>
+ <objectgroup name="objects">
+  <object id="156" gid="11" x="-6" y="642" width="1152" height="648"/>
+ </objectgroup>
+ <objectgroup name="walls">
+  <properties>
+   <property name="hidden" type="bool" value="true"/>
+  </properties>
+  <object id="139" x="6" y="528" width="300" height="12">
+   <properties>
+    <property name="hidden" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="140" x="306" y="528" width="798" height="18">
+   <properties>
+    <property name="hidden" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="142" x="306" y="528" width="18" height="132">
+   <properties>
+    <property name="hidden" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="152" x="624" y="384" width="78" height="138"/>
+  <object id="154" x="0" y="528" width="12" height="114"/>
+ </objectgroup>
+ <objectgroup name="character">
+  <object id="99" gid="12" x="12" y="486" width="121.324" height="132"/>
+ </objectgroup>
+ <objectgroup name="mechanisms">
+  <object id="114" type="1" x="798" y="438" width="96" height="90"/>
+  <object id="120" type="7" x="426" y="132" width="72" height="72">
+   <properties>
+    <property name="effectRadius" type="float" value="23"/>
+   </properties>
+  </object>
+  <object id="145" type="99" x="204" y="456" width="48" height="48"/>
+  <object id="157" type="6" x="138" y="252" width="168" height="30">
+   <properties>
+    <property name="offsetX" type="float" value="30"/>
+    <property name="speedX" type="float" value="10"/>
+   </properties>
+  </object>
+  <object id="163" type="6" x="138" y="252" width="30" height="72">
+   <properties>
+    <property name="offsetX" type="float" value="30"/>
+    <property name="speedX" type="float" value="10"/>
+   </properties>
+  </object>
+  <object id="164" type="6" x="276" y="252" width="30" height="66">
+   <properties>
+    <property name="offsetX" type="float" value="30"/>
+    <property name="speedX" type="float" value="10"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -3,10 +3,9 @@ package com.dongbat.vocal.object.mechanism;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.dongbat.game.util.AssetUtil;
-import com.dongbat.game.util.FontUtil;
+import com.dongbat.game.util.PitchUtil;
 import com.dongbat.vocal.object.Mechanism;
 
 /**
@@ -23,6 +22,7 @@ public class Spawn extends Mechanism {
 
   private float accumulate = 0;
   private int count = 0;
+  public boolean noSilent = false;
 
   @Override
   public void init() {
@@ -34,6 +34,9 @@ public class Spawn extends Mechanism {
   @Override
   public void update(float delta) {
     if (count >= max && max >= 0) {
+      return;
+    }
+    if (noSilent && PitchUtil.getKeyLevel(4) < 0) {
       return;
     }
     accumulate += delta;
@@ -49,7 +52,7 @@ public class Spawn extends Mechanism {
     sprite.setPosition(x - width / 2, y - height / 2);
     sprite.draw(batch);
   }
-  
+
   private final Vector2 p = new Vector2();
 
 }

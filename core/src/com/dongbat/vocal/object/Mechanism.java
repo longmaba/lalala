@@ -12,6 +12,7 @@ import com.dongbat.vocal.object.mechanism.PatternGate;
 import com.dongbat.vocal.object.mechanism.PitchAndDurationBomb;
 import com.dongbat.vocal.object.mechanism.PitchOnlyCannon;
 import com.dongbat.vocal.object.mechanism.Spawn;
+import com.dongbat.vocal.object.mechanism.Vacuum;
 import com.dongbat.vocal.object.mechanism.Wall;
 
 /**
@@ -46,6 +47,9 @@ public abstract class Mechanism {
         break;
       case 6:
         mechanism = new MovingPlatform();
+        break;
+      case 7:
+        mechanism = new Vacuum();
         break;
       case 99:
         mechanism = new Ball();

@@ -45,7 +45,7 @@ public class PitchOnlyCannon extends RotatingMechanism {
     cannonTrajectory.setOrigin(0.1f, cannonTrajectory.getHeight() / 2);
 
     cannonBullet = new Sprite(AssetUtil.getAssetManager().get("stuff.atlas", TextureAtlas.class).findRegion("cannon_bullet", pitchLevel));
-    cannonBullet.setSize(cannonBullet.getWidth() * height / h, cannonBullet.getHeight() * height / h);
+    cannonBullet.setSize(cannonBullet.getWidth() * height / h * 2, cannonBullet.getHeight() * height / h * 2);
     cannonBullet.setOriginCenter();
   }
 
