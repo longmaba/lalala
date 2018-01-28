@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="48" height="27" tilewidth="24" tileheight="24" nextobjectid="156">
+ <tileset firstgid="1" name="bg" tilewidth="1920" tileheight="1080" tilecount="2" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="8">
+   <image width="1920" height="1080" source="0.3.jpg"/>
+  </tile>
+  <tile id="9">
+   <image width="1920" height="1080" source="0.3.winning.jpg"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="11" name="idle" tilewidth="500" tileheight="544" tilecount="4" columns="4">
+  <image source="idle.png" width="2000" height="544"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="200"/>
+    <frame tileid="1" duration="200"/>
+    <frame tileid="2" duration="200"/>
+    <frame tileid="3" duration="200"/>
+   </animation>
+  </tile>
+ </tileset>
+ <objectgroup name="bg">
+  <object id="144" gid="9" x="0" y="648" width="1152" height="648"/>
+ </objectgroup>
+ <objectgroup name="objects">
+  <object id="147" gid="10" x="0" y="648" width="1152" height="648">
+   <properties>
+    <property name="winOnly" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="walls">
+  <properties>
+   <property name="hidden" type="bool" value="true"/>
+  </properties>
+  <object id="139" x="0" y="630" width="300" height="12">
+   <properties>
+    <property name="hidden" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="140" x="306" y="528" width="798" height="18">
+   <properties>
+    <property name="hidden" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="142" x="306" y="528" width="18" height="132">
+   <properties>
+    <property name="hidden" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="150" x="66" y="582" width="42" height="48"/>
+  <object id="152" x="576" y="480" width="126" height="42"/>
+  <object id="154" x="0" y="474" width="12" height="168"/>
+ </objectgroup>
+ <objectgroup name="character">
+  <object id="99" gid="11" x="12" y="486" width="121.324" height="132"/>
+ </objectgroup>
+ <objectgroup name="mechanisms">
+  <object id="114" type="1" x="798" y="438" width="96" height="90"/>
+  <object id="120" type="3" x="666" y="270" width="72" height="72">
+   <properties>
+    <property name="effectRadius" type="float" value="15"/>
+   </properties>
+  </object>
+  <object id="145" type="0" x="84" y="174" width="78" height="78">
+   <properties>
+    <property name="max" type="int" value="100"/>
+    <property name="noSilent" type="bool" value="true"/>
+    <property name="radius" type="float" value="2"/>
+    <property name="rate" type="float" value="0.2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

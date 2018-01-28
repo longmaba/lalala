@@ -24,7 +24,7 @@ public class GameplayScreen extends ScreenAdapter {
   private final UI ui;
 
   public GameplayScreen(Game game) {
-    level = new Level("0.1.tmx");
+    level = new Level("1.4.tmx");
     this.game = game;
     ui = new UI();
     InputUtil.addProcessor(ui);

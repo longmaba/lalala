@@ -20,10 +20,10 @@
    </animation>
   </tile>
  </tileset>
- <objectgroup name="bg" opacity="0.54">
+ <objectgroup name="bg">
   <object id="103" name="bg" gid="2" x="0" y="647.998" width="1152" height="647.998"/>
  </objectgroup>
- <objectgroup name="objects" visible="0">
+ <objectgroup name="objects">
   <object id="100" name="winningbg" gid="3" x="0.903975" y="648" width="1152.96" height="648.542">
    <properties>
     <property name="winOnly" type="bool" value="true"/>
