@@ -23,8 +23,8 @@ public class GameplayScreen extends ScreenAdapter {
   private final Game game;
   private final UI ui;
 
-  public GameplayScreen(Game game) {
-    level = new Level("1.4.tmx");
+  public GameplayScreen(Game game, String map) {
+    level = new Level(map);
     this.game = game;
     ui = new UI();
     InputUtil.addProcessor(ui);
@@ -32,9 +32,6 @@ public class GameplayScreen extends ScreenAdapter {
 
   @Override
   public void render(float delta) {
-    if (Gdx.input.isKeyJustPressed(Keys.R)) {
-      game.setScreen(new GameplayScreen(game));
-    }
     level.update(delta);
     level.draw();
     

@@ -44,9 +44,9 @@ public class CutsceneScreen extends ScreenAdapter {
   private final FloatArray ts = new FloatArray();
   private final Rectangle currentVp = new Rectangle();
 
-  public CutsceneScreen(Game game) {
+  public CutsceneScreen(Game game, String mapName) {
     this.game = game;
-    map = new TmxMapLoader().load("test.tmx");
+    map = new TmxMapLoader().load(mapName);
 
     loadViewports(map);
     width = Gdx.graphics.getWidth();
@@ -90,9 +90,6 @@ public class CutsceneScreen extends ScreenAdapter {
   @Override
   public void render(float delta) {
     accumulate += delta;
-    if (Gdx.input.isKeyJustPressed(Keys.R)) {
-      game.setScreen(new CutsceneScreen(game));
-    }
     if (viewports.size == 0) {
       currentVp.set(0, 0, width, height);
     } else {

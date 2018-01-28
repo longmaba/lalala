@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.dongbat.game.util.AssetUtil;
+import com.dongbat.game.util.LevelUtil;
 import com.dongbat.game.util.PitchUtil;
 import com.dongbat.game.util.ShapeUtil;
 
@@ -49,7 +50,7 @@ public class TestScreen extends ScreenAdapter {
     }
     
     if (level == 3) {
-      game.setScreen(new GameplayScreen(game));
+      LevelUtil.start();
     }
     
     camera.update();
