@@ -1,222 +1,229 @@
 
 stuff.png
-size: 1024,1024
+size: 2048,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 ball
   rotate: false
-  xy: 2, 2
+  xy: 738, 393
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 battery
   rotate: false
-  xy: 468, 340
+  xy: 1792, 759
   size: 127, 32
   orig: 127, 32
   offset: 0, 0
   index: -1
 cannon_bullet
   rotate: false
-  xy: 597, 340
-  size: 13, 32
-  orig: 13, 32
-  offset: 0, 0
-  index: 0
-cannon_bullet
-  rotate: false
-  xy: 583, 306
-  size: 13, 32
-  orig: 13, 32
-  offset: 0, 0
-  index: 1
-cannon_bullet
-  rotate: false
-  xy: 968, 870
-  size: 13, 32
-  orig: 13, 32
-  offset: 0, 0
-  index: 2
-cannon_bullet
-  rotate: false
-  xy: 1003, 984
+  xy: 306, 83
   size: 13, 32
   orig: 13, 32
   offset: 0, 0
   index: 3
-cannon_dock
+cannon_bullet
   rotate: false
-  xy: 767, 361
-  size: 100, 71
-  orig: 100, 71
+  xy: 1000, 541
+  size: 13, 32
+  orig: 13, 32
+  offset: 0, 0
+  index: 2
+cannon_bullet
+  rotate: false
+  xy: 1121, 655
+  size: 13, 32
+  orig: 13, 32
   offset: 0, 0
   index: 0
-cannon_dock
+cannon_bullet
   rotate: false
-  xy: 767, 288
-  size: 100, 71
-  orig: 100, 71
+  xy: 1792, 725
+  size: 13, 32
+  orig: 13, 32
   offset: 0, 0
   index: 1
 cannon_dock
   rotate: false
-  xy: 908, 623
-  size: 100, 71
-  orig: 100, 71
+  xy: 2, 8
+  size: 150, 107
+  orig: 150, 107
   offset: 0, 0
   index: 2
 cannon_dock
   rotate: false
-  xy: 908, 550
-  size: 100, 71
-  orig: 100, 71
+  xy: 1792, 902
+  size: 150, 107
+  orig: 150, 107
+  offset: 0, 0
+  index: 0
+cannon_dock
+  rotate: false
+  xy: 324, 138
+  size: 150, 107
+  orig: 150, 107
+  offset: 0, 0
+  index: 1
+cannon_dock
+  rotate: false
+  xy: 586, 318
+  size: 150, 107
+  orig: 150, 107
   offset: 0, 0
   index: 3
 cannon_dock_cd
   rotate: false
-  xy: 908, 477
-  size: 100, 71
-  orig: 100, 71
+  xy: 848, 580
+  size: 150, 107
+  orig: 150, 107
   offset: 0, 0
   index: 0
 cannon_dock_cd
   rotate: false
-  xy: 908, 404
-  size: 100, 71
-  orig: 100, 71
+  xy: 154, 8
+  size: 150, 107
+  orig: 150, 107
   offset: 0, 0
   index: 1
 cannon_dock_cd
   rotate: false
-  xy: 869, 331
-  size: 100, 71
-  orig: 100, 71
+  xy: 1792, 793
+  size: 150, 107
+  orig: 150, 107
   offset: 0, 0
   index: 2
 cannon_dock_cd
   rotate: false
-  xy: 869, 258
-  size: 100, 71
-  orig: 100, 71
+  xy: 848, 471
+  size: 150, 107
+  orig: 150, 107
   offset: 0, 0
   index: 3
 cannon_trajectory
   rotate: false
-  xy: 2, 36
+  xy: 2, 2
   size: 161, 4
   orig: 161, 4
   offset: 0, 0
   index: -1
 deco
   rotate: false
-  xy: 324, 321
-  size: 142, 51
-  orig: 142, 51
-  offset: 0, 0
-  index: 3
-deco
-  rotate: false
-  xy: 646, 320
+  xy: 1000, 575
   size: 119, 112
   orig: 119, 112
   offset: 0, 0
   index: 1
 deco
   rotate: false
-  xy: 968, 904
-  size: 33, 112
-  orig: 33, 112
+  xy: 586, 265
+  size: 142, 51
+  orig: 142, 51
   offset: 0, 0
-  index: 6
+  index: 3
 deco
   rotate: false
-  xy: 468, 298
+  xy: 848, 429
   size: 113, 40
   orig: 113, 40
   offset: 0, 0
   index: 5
 deco
   rotate: false
-  xy: 264, 246
+  xy: 504, 575
+  size: 33, 112
+  orig: 33, 112
+  offset: 0, 0
+  index: 6
+deco
+  rotate: false
+  xy: 1944, 953
   size: 59, 56
   orig: 59, 56
   offset: 0, 0
   index: 2
 deco
   rotate: false
-  xy: 971, 353
+  xy: 476, 196
   size: 37, 49
   orig: 37, 49
   offset: 0, 0
   index: 4
 goal
   rotate: false
-  xy: 2, 304
-  size: 320, 320
-  orig: 320, 320
-  offset: 0, 0
-  index: 1
-goal
-  rotate: false
-  xy: 2, 304
-  size: 320, 320
-  orig: 320, 320
-  offset: 0, 0
-  index: 5
-goal
-  rotate: false
-  xy: 2, 304
-  size: 320, 320
-  orig: 320, 320
-  offset: 0, 0
-  index: 3
-goal
-  rotate: false
-  xy: 324, 696
+  xy: 504, 689
   size: 320, 320
   orig: 320, 320
   offset: 0, 0
   index: 2
 goal
   rotate: false
-  xy: 324, 374
+  xy: 826, 689
+  size: 320, 320
+  orig: 320, 320
+  offset: 0, 0
+  index: 1
+goal
+  rotate: false
+  xy: 826, 689
+  size: 320, 320
+  orig: 320, 320
+  offset: 0, 0
+  index: 3
+goal
+  rotate: false
+  xy: 826, 689
+  size: 320, 320
+  orig: 320, 320
+  offset: 0, 0
+  index: 5
+goal
+  rotate: false
+  xy: 1148, 689
   size: 320, 320
   orig: 320, 320
   offset: 0, 0
   index: 4
 goal
   rotate: false
-  xy: 324, 374
+  xy: 1148, 689
   size: 320, 320
   orig: 320, 320
   offset: 0, 0
   index: -1
 goal_done
   rotate: false
-  xy: 646, 696
+  xy: 1470, 689
   size: 320, 320
   orig: 320, 320
   offset: 0, 0
   index: -1
+gun5
+  rotate: false
+  xy: 2, 509
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
 spawner
   rotate: false
-  xy: 2, 626
+  xy: 2, 117
   size: 320, 390
   orig: 320, 390
   offset: 0, 0
   index: -1
 vacuum
   rotate: false
-  xy: 646, 434
+  xy: 324, 247
   size: 260, 260
   orig: 260, 260
   offset: 0, 0
   index: -1
 vacuum_radius
   rotate: false
-  xy: 2, 42
+  xy: 586, 427
   size: 260, 260
   orig: 260, 260
   offset: 0, 0
